@@ -136,4 +136,10 @@ defmodule ABI do
     |> Enum.map(&ABI.FunctionSelector.parse_specification_item/1)
     |> Enum.filter(& &1)
   end
+
+  def parse_event_specifications(doc) do
+    doc
+    |> Enum.map(&ABI.EventSelector.parse_specification_item/1)
+    |> Enum.filter(& &1)
+  end
 end
